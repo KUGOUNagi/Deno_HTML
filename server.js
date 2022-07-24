@@ -60,7 +60,7 @@ serve(async (req) => {
 
       nextWord.length > 0 &&
 
-      previousWord.charAt(previousWord.length - 1) !== 'ん'
+      previousWord.charAt(previousWord.length - 1) == 'ん'
 
     ) {
 
