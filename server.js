@@ -4,7 +4,7 @@ import { serveDir } from "https://deno.land/std@0.138.0/http/file_server.ts";
 
 
 let previousWord = "しりとり";
-let myArray=['しりとり']
+let myArray=[]
 
 
 console.log("Listening on http://localhost:8000");
@@ -46,7 +46,7 @@ serve(async (req) => {
     ) {
 
       return new Response("同じ単語を使っています。", { status: 400 });
-      
+
     }
 
 
