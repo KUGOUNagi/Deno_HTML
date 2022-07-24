@@ -45,6 +45,16 @@
 
     window.onload = async (event) => {
 
+      await fetch("/shiritori", {
+
+      method: "POST",
+
+      headers: { "Content-Type": "application/json" },
+
+      body: JSON.stringify({ nextWord: "りんご" })
+
+      });
+
       const response = await fetch("/shiritori");
 
       const previousWord = await response.text();
