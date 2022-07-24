@@ -3,3 +3,27 @@ body {
     background: skyblue;
 
 }
+font{
+    font-size: 30px;
+}
+.title {
+    margin-right: auto;
+    margin-left: auto;
+}
+h1{
+    text-align:center;font-size:40px;color:rgb(0, 0, 0);
+}
+header {
+    width: 100%;
+    height: 100px; 
+    text-align: center;
+    padding: 50px 0;
+    background-color: #6de2ff;
+}  
+footer {
+    width: 100%;
+    height: 100px; 
+    text-align: center;
+    padding: 50px 0;
+    background-color: #6de2ff;
+}
