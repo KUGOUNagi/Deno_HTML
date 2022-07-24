@@ -4,6 +4,7 @@ import { serveDir } from "https://deno.land/std@0.138.0/http/file_server.ts";
 
 
 let previousWord = "しりとり";
+let myArray=['しりとり']
 
 
 console.log("Listening on http://localhost:8000");
@@ -36,9 +37,21 @@ serve(async (req) => {
       return new Response("前の単語に続いていません。", { status: 400 });
 
     }
+    if (
+
+      nextWord.length > 0 &&
+
+      myArray.indexOf(previousWord) !== -1
+
+    ) {
+
+      return new Response("同じ単語を使っています。", { status: 400 });
+      
+    }
 
 
     previousWord = nextWord;
+    myArray.push(previousWord);
 
     return new Response(previousWord);
 
