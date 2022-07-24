@@ -41,7 +41,7 @@ serve(async (req) => {
 
       nextWord.length > 0 &&
 
-      myArray.indexOf(previousWord) !== -1
+      myArray.indexOf(nextWord) !== -1
 
     ) {
 
