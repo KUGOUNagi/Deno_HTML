@@ -4,8 +4,14 @@ import { serveDir } from "https://deno.land/std@0.138.0/http/file_server.ts";
 
 
 let previousWord = "しりとり";
-let myArray=[]
+let wordFile= ['ろしあ','かい','うもう','うえ','かお'];
+let myArray=[];
 
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
+}
 
 console.log("Listening on http://localhost:8000");
 
@@ -15,6 +21,8 @@ serve(async (req) => {
 
 
   if (req.method === "GET" && pathname === "/shiritori") {
+
+    previousWord=wordFile[getRandomInt(0,5)];
 
     return new Response(previousWord);
 
@@ -46,6 +54,17 @@ serve(async (req) => {
     ) {
 
       return new Response("同じ単語を使っています。", { status: 400 });
+
+    }
+    if (
+
+      nextWord.length > 0 &&
+
+      previousWord.charAt(previousWord.length - 1) !== 'ん'
+
+    ) {
+
+      return new Response("「ん」と言いました。あなたの負けです。", { status: 400 });
 
     }
 
