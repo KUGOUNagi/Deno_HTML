@@ -11,7 +11,14 @@ font{
     margin-left: auto;
 }
 h1{
-    text-align:center;font-size:40px;color:rgb(0, 0, 0);
+    text-align:center;
+    font-size:40px;color:rgb(0, 0, 0);
+}
+h2{
+    font-size:30px;
+    color:rgb(0, 0, 0);
+    background-color: rgb(214, 214, 214);
+    border-bottom: solid 3px black;
 }
 header {
     width: 100%;
