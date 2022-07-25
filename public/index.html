@@ -40,6 +40,7 @@
 
   <button id="nextWordSendButton">送信</button>
 
+  <p id="lose"></p>
 
   <script type="module">
 
@@ -49,10 +50,11 @@
 
       const previousWord = await response.text();
 
-
       const para = document.querySelector("#previousWord");
 
       para.innerText = `前の単語：${previousWord}`;
+
+      document.getElementById("nextWordSendButton").addEventListener('click', hoge, false);
 
     };
 
@@ -60,6 +62,8 @@
     document.querySelector("#nextWordSendButton").onclick = async (event) => {
 
       const nextWord = document.querySelector("#nextWordInput").value;
+
+      loser(nextWord);
 
       const response = await fetch("/shiritori", {
 
@@ -78,17 +82,8 @@
         return;
 
       }
-      if (response.status / 100 !== 2&&response.text("「ん」と言いました。あなたの負けです。")) {
-
-        alert(await response.text());
-
-        ocation.href = "page1.html";
-
-
-      } 
 
       const previousWord = await response.text();
-
 
       const para = document.querySelector("#previousWord");
 
@@ -96,6 +91,30 @@
 
     };
 
+  </script>
+
+  <script>
+
+    function hoge() {
+      document.getElementById("nextWordInput").value='';
+    }
+
+  </script>
+
+  <p id="p1">あなたは負けました</p>
+
+  <script>
+  //初期表示は非表示
+  document.getElementById("p1").style.display ="none";
+
+  function loser(word){
+    const p1 = document.getElementById("p1");
+
+    if(word.charAt(word.length - 1) == 'ん'){
+      // noneで非表示
+      p1.style.display ="block";
+    }
+  }
   </script>
 
   <footer>

@@ -6,7 +6,7 @@ import { serveDir } from "https://deno.land/std@0.138.0/http/file_server.ts";
 let previousWord = "しりとり";
 let wordFile= ['ろしあ','かい','うもう','うえ','かお'];
 let myArray=[];
-let regexp = /^[\u{3000}-\u{301C}\u{3041}-\u{3093}\u{309B}-\u{309E}\u{30FC}]+$/mu;
+let regexp = /^[\u{3041}-\u{3093}\u{309B}-\u{309E}\u{30FC}]+$/mu;
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -65,8 +65,9 @@ serve(async (req) => {
 
     ) {
 
-      return new Response("「ん」と言いました。あなたの負けです。", { status: 400 });
-
+      previousWord = wordFile[getRandomInt(0,5)];
+  
+      return new Response(previousWord);
     }
     if (
 
@@ -77,6 +78,15 @@ serve(async (req) => {
     ) {
 
       return new Response("ひらがな以外が混ざっています。", { status: 400 });
+
+    }
+    if (
+
+      nextWord.length == 0
+
+    ) {
+
+      return new Response("単語が入力されていません。", { status: 400 });
 
     }
 
