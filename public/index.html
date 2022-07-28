@@ -40,7 +40,7 @@
 
   <p id="previousWord"></p>
 
-  <input id="nextWordInput" type="text" disabled/>
+  <input id="nextWordInput" type="text" disabled />
 
   <button id="nextWordSendButton">送信</button>
 
@@ -121,11 +121,10 @@
   }
   </script>
   <script>
-    
     let st = document.getElementById('startButton');
     st.addEventListener('click', function(){
       var box_elem = document.getElementById("nextWordInput");
-      box_elem.disabled = true;
+      box_elem.disabled = false;
   });
     let btn = document.getElementById('nextWordSendButton');
     btn.addEventListener('click', function(){
@@ -138,6 +137,7 @@
   var fn = function() {
     document.getElementById("counter").innerHTML=i+"秒";
   if(i < 1){
+    var box_elem = document.getElementById("nextWordInput");
     box_elem.disabled = false;
     clearInterval(id);} 
   i--;
