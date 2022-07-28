@@ -23,7 +23,7 @@ serve(async (req) => {
 
   if (req.method === "GET" && pathname === "/shiritori") {
 
-    previousWord=wordFile[getRandomInt(0,5)];
+    previousWord=wordFile[getRandomInt(0,wordFile.length)];
 
     myArray.push(previousWord);
 
