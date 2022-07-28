@@ -121,9 +121,10 @@
   }
   </script>
   <script>
-    var box_elem = document.getElementById("nextWordInput");
+    
     let st = document.getElementById('startButton');
     st.addEventListener('click', function(){
+      var box_elem = document.getElementById("nextWordInput");
       box_elem.disabled = true;
   });
     let btn = document.getElementById('nextWordSendButton');
@@ -134,7 +135,6 @@
   </script>
 
   <script>
-    setTimeout
   var fn = function() {
     document.getElementById("counter").innerHTML=i+"秒";
   if(i < 1){
