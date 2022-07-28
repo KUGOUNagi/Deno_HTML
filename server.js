@@ -8,7 +8,7 @@ let wordFile = ['ろしあ','かい','うもう','うえ','かお'];
 let myArray=[];
 let regexp = /^[\u{3041}-\u{3093}\u{309B}-\u{309E}\u{30FC}]+$/mu;
 //['ろしあ','かい','うもう','うえ','かお'];
-//FileReader.readAsText(Blob("./public/text.txt" , {type:"text/plain"}));
+//FileReader().readAsText(Blob("/public/text.txt" , {type:"text/plain"})).split(',');
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
