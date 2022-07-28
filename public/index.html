@@ -126,8 +126,8 @@
     document.getElementById("counter").style.display ="none";
     let st = document.getElementById('startButton');
     st.addEventListener('click', function(){
+      setInterval(fn,tm);
       i=30;
-      id;
       document.getElementById("counter").style.display ="block";
       var box_elem = document.getElementById("nextWordInput");
       box_elem.disabled = false;
