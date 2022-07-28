@@ -33,11 +33,14 @@
     <OBJECT DATA="./comment.txt"TYPE="text/plain"></OBJECT>
 
   </p>
+
+  <button id="startButton">スタート</button>
+
   <div id="counter"></div>
 
   <p id="previousWord"></p>
 
-  <input id="nextWordInput" type="text" />
+  <input id="nextWordInput" type="text" disabled/>
 
   <button id="nextWordSendButton">送信</button>
 
@@ -118,6 +121,10 @@
   }
   </script>
   <script>
+    let st = document.getElementById('startButton');
+    st.addEventListener('click', function(){
+      box_elem.disabled = true;
+  });
     let btn = document.getElementById('nextWordSendButton');
     btn.addEventListener('click', function(){
       i=30;
@@ -129,7 +136,9 @@
     setTimeout
   var fn = function() {
     document.getElementById("counter").innerHTML=i+"秒";
-  if(i < 1) clearInterval(id);
+  if(i < 1){
+    box_elem.disabled = false;
+    clearInterval(id);} 
   i--;
   }
   var tm = 1000;
