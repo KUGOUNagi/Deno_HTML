@@ -4,9 +4,7 @@ import { serveDir } from "https://deno.land/std@0.138.0/http/file_server.ts";
 
 
 let previousWord = "しりとり";
-let wordFile = ['ろしあ','かい','かいそう','うえ','かお',
-                'ふんか','かき','ろうそく','しっけ','みこ',
-                'くさ','うし','からす','みせ','しそ'];
+let wordFile = ['ろしあ','かい','かいそう','うえ','かお','ふんか','かき','ろうそく','しっけ','みこ','くさ','うし','からす','みせ','しそ'];
 let myArray=[];
 let regexp = /^[\u{3041}-\u{3093}\u{309B}-\u{309E}\u{30FC}]+$/mu;
 
