@@ -20,7 +20,7 @@
 
     <ul class="header-menu">
 
-      <li><a href="index.html">今すぐプレイ</a></li>
+      <li><a href="index.html">リセットしてプレイ</a></li>
 
     </ul>
 
@@ -31,8 +31,9 @@
   <p id="comment">
 
     <OBJECT DATA="./comment.txt"TYPE="text/plain"></OBJECT>
-
+    
   </p>
+  <div id="counter"></div>
 
   <p id="previousWord"></p>
 
@@ -116,11 +117,28 @@
     }
   }
   </script>
+  <script>
+    let btn = document.getElementById('nextWordInput');
+    btn.addEventListener('submit', function(){
+      id;
+  });
+  </script>
+
+  <script>
+  var fn = function() {
+    document.getElementById("counter").innerHTML=i+"秒";
+  if(i < 0) clearInterval(id);
+  i--;
+  }
+  var tm = 1000;
+  var i = 30;
+  var id = setInterval(fn,tm);
+  </script>
 
   <footer>
     <ul class="footer-menu">
 
-      <li><a href="index.html">今すぐプレイ</a></li>
+      <li><a href="index.html">リセットしてプレイ</a></li>
 
     </ul>
   </footer>
