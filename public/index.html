@@ -147,7 +147,9 @@
     document.getElementById("counter").innerHTML=i+"秒";
   if(i < 1){
     var box_elem = document.getElementById("nextWordInput");
+    let st = document.getElementById('startButton');
     box_elem.disabled = true;
+    st.disabled = true;
     document.getElementById("p1").style.display ="block";
     clearInterval(id);} 
   i--;
