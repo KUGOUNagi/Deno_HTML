@@ -44,6 +44,8 @@
 
   <button id="nextWordSendButton">送信</button>
 
+  <p id="maxword"></p>
+
   <p id="lose"></p>
 
   <script type="module">
@@ -69,7 +71,7 @@
 
       loser(nextWord);
 
-      const response = await fetch("/shiritori", {
+      let response = await fetch("/shiritori", {
 
         method: "POST",
 
@@ -87,7 +89,15 @@
 
       }
 
-      const previousWord = await response.text();
+      let text=await response.text();
+
+      const maxword = text[0];
+
+      const max = document.querySelector("#maxword");
+
+      max.innerText=  `最長記録：${maxword}`;
+
+      const previousWord = text[1];
 
       const para = document.querySelector("#previousWord");
 
