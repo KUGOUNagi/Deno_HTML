@@ -86,7 +86,7 @@
         return;
 
       }
-      if(response.text()[[0]]!=0){
+      if(response.text()[[0]]){
         let text=await response.text();
 
         const maxword = text[[0]];
@@ -100,7 +100,7 @@
         const para = document.querySelector("#previousWord");
 
         para.innerText = `前の単語：${previousWord}`;
-        
+
       }
 
       const previousWord = await response.text();
