@@ -86,22 +86,6 @@
         return;
 
       }
-      if(response.text()[[0]]){
-        let text=await response.text();
-
-        const maxword = text[[0]];
-
-        const max = document.querySelector("#maxword");
-
-        max.innerText=  `最長記録：${maxword}`;
-
-        const previousWord = text[[1]];
-
-        const para = document.querySelector("#previousWord");
-
-        para.innerText = `前の単語：${previousWord}`;
-
-      }
 
       const previousWord = await response.text();
 

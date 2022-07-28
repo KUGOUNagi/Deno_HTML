@@ -66,13 +66,12 @@ serve(async (req) => {
       nextWord.charAt(nextWord.length - 1) == 'ん'
 
     ) {
-      maxword=myArray.length;
-
+      
       myArray=[];
 
       previousWord = wordFile[getRandomInt(0,wordFile.length)];
   
-      return new Response([maxword,previousWord]);
+      return new Response(previousWord);
     }
     if (
 
