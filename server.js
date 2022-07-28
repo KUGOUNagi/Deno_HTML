@@ -4,11 +4,11 @@ import { serveDir } from "https://deno.land/std@0.138.0/http/file_server.ts";
 
 
 let previousWord = "しりとり";
-let wordFile = FileReader().readAsText(Blob("/public/text.txt" , {type:"text/plain"})).split(',');
+let wordFile = ['ろしあ','かい','かいそう','うえ','かお',
+                'ふんか','かき','ろうそく','しっけ','みこ',
+                'くさ','うし','からす','みせ','しそ'];
 let myArray=[];
 let regexp = /^[\u{3041}-\u{3093}\u{309B}-\u{309E}\u{30FC}]+$/mu;
-//['ろしあ','かい','うもう','うえ','かお'];
-//FileReader().readAsText(Blob("/public/text.txt" , {type:"text/plain"})).split(',');
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -26,6 +26,8 @@ serve(async (req) => {
   if (req.method === "GET" && pathname === "/shiritori") {
 
     previousWord=wordFile[getRandomInt(0,5)];
+
+    myArray.push(previousWord);
 
     return new Response(previousWord);
 
