@@ -132,6 +132,7 @@
     document.getElementById("counter").style.display ="none";
     let st = document.getElementById('startButton');
     st.addEventListener('click', function(){
+      n=0;
       i=30;
       var box_elem = document.getElementById("nextWordInput");
       box_elem.disabled = false;
@@ -139,6 +140,8 @@
   });
     let btn = document.getElementById('nextWordSendButton');
     btn.addEventListener('click', function(){
+      n++;
+      document.getElementById("max").innerHTML=n+"語続きました";//最大文字数を表示
       i=30;
       id;
   });
@@ -153,8 +156,6 @@
     box_elem.disabled = true;
     st.disabled = true;
     document.getElementById("p1").style.display ="block";
-    document.getElementById("max").innerHTML=n+"語続きました";
-    document.getElementById("max").style.display ="block";
     clearInterval(id);} 
   i--;
   }
