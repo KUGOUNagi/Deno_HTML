@@ -30,7 +30,7 @@ header {
 }  
 ul.header-menu li {
     display: inline;
-    font-size:30px;
+    font-size:20px;
     list-style: none;
     padding: 10px;
 }
@@ -43,7 +43,7 @@ footer {
 }
 ul.footer-menu li {
     display: inline;
-    font-size:30px;
+    font-size:20px;
     list-style: none;
     padding: 10px;
 }
