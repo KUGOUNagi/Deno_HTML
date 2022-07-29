@@ -20,7 +20,7 @@
 
     <ul class="header-menu">
 
-      <li><a href="index.html">リセットしてプレイ</a></li>
+      <li><a href="index.html">リセットしてプレイ</a></li><!--リセット機能-->
 
     </ul>
 
@@ -30,7 +30,7 @@
 
   <p id="comment">
 
-    <OBJECT DATA="./comment.txt"TYPE="text/plain"></OBJECT>
+    <OBJECT DATA="./comment.txt"TYPE="text/plain"></OBJECT><!--.txtファイルより文章を読み込み-->
 
   </p>
 
@@ -63,6 +63,7 @@
       para.innerText = `前の単語：${previousWord}`;
 
       document.getElementById("nextWordSendButton").addEventListener('click', hoge, false);
+      //ボタンを押したときにテキストボックスの前の入力をリセットする
 
     };
 
@@ -71,7 +72,7 @@
 
       const nextWord = document.querySelector("#nextWordInput").value;
 
-      loser(nextWord);
+      loser(nextWord);//関数で「ん」の時のみ特殊な処理を行う
 
       const response = await fetch("/shiritori", {
 
@@ -104,7 +105,7 @@
   <script>
 
     function hoge() {
-      document.getElementById("nextWordInput").value='';
+      document.getElementById("nextWordInput").value='';//テキストボックスのリセット
     }
 
   </script>
@@ -112,20 +113,20 @@
   <p id="p1">あなたは負けました</p>
 
   <script>
-  //初期表示は非表示
+
   document.getElementById("p1").style.display ="none";
 
   function loser(word){
     const p1 = document.getElementById("p1");
 
     if(word.charAt(word.length - 1) == 'ん'){
-      // noneで非表示
+      //語尾が「ん」=負けたとき実行
       p1.style.display ="block";
       clearInterval(id);
       var box_elem = document.getElementById("nextWordInput");
       let st = document.getElementById('startButton');
-      box_elem.disabled = true;
-      st.disabled = true;
+      box_elem.disabled = true;//ボタン無効
+      st.disabled = true;//テキストボックス無効
     }
   }
   </script>
@@ -137,7 +138,7 @@
       n=0;
       document.getElementById("long").innerHTML=n+"語続きました";//最大文字数を表示
       i=30;
-      var box_elem = document.getElementById("nextWordInput");
+      var box_elem = document.getElementById("nextWordInput");//スタートボタンでテキストボックスを有効化
       box_elem.disabled = false;
       document.getElementById("counter").style.display ="block";
   });
@@ -157,8 +158,8 @@
 
   <script>
   var fn = function() {
-    document.getElementById("counter").innerHTML=i+"秒";
-  if(i < 1){
+    document.getElementById("counter").innerHTML=i+"秒";//30秒のカウント
+  if(i < 1){//30秒経った場合
     var box_elem = document.getElementById("nextWordInput");
     let st = document.getElementById('startButton');
     box_elem.disabled = true;
