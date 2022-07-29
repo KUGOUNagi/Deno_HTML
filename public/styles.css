@@ -15,10 +15,23 @@ h1{
     font-size:40px;color:rgb(0, 0, 0);
 }
 h2{
+    text-align:center;
     font-size:30px;
     color:rgb(0, 0, 0);
     background-color: rgb(214, 214, 214);
     border-bottom: solid 3px black;
+}
+p{
+    text-align:center;
+}
+div{
+    text-align:center;
+}
+button{
+    text-align:center;
+}
+input{
+    text-align:center;
 }
 header {
     width: 100%;
