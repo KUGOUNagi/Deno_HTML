@@ -44,6 +44,8 @@
 
   <button id="nextWordSendButton">送信</button>
 
+  <p id="long"></p>
+
   <p id="max"></p>
 
   <p id="lose"></p>
@@ -133,7 +135,7 @@
     let st = document.getElementById('startButton');
     st.addEventListener('click', function(){
       n=0;
-      document.getElementById("max").innerHTML=n+"語続きました";//最大文字数を表示
+      document.getElementById("long").innerHTML=n+"語続きました";//最大文字数を表示
       i=30;
       var box_elem = document.getElementById("nextWordInput");
       box_elem.disabled = false;
@@ -147,7 +149,7 @@
         maxcount=n;
         document.getElementById("max").innerHTML="最大文字数："+maxcount;//最大語数を表示
       }
-      document.getElementById("max").innerHTML=n+"語続きました";//続いた語数を表示
+      document.getElementById("long").innerHTML=n+"語続きました";//続いた語数を表示
       i=30;
       id;
   });
